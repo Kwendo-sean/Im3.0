@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Imani 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            overflow-x: hidden;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .comfort-message {
+            max-width: 90%;
+            margin: auto;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            line-height: 1.5;
+            font-family: 'Dancing Script', cursive;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hug-button {
+            font-size: 1.5rem;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background: #ff69b4;
+            color: white;
+            animation: glow 1s infinite alternate;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255, 105, 180, 0.7); }
+            to { box-shadow: 0 0 20px rgba(255, 20, 147, 0.9); }
+        }
+
+        .hug-button:hover {
+            transform: scale(1.1);
+        }
+
+        .gif-container {
+            margin-top: 20px;
+        }
+
+        /* Floating Hug Emojis */
+        .floating-hug {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.9;
+            cursor: pointer;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+        }
+
+        /* Spotify Music Player */
+        .music-container {
+            margin-top: 30px;
+        }
+
+        .spotify-player {
+            border-radius: 12px;
+            width: 100%;
+            max-width: 320px;
+            height: 152px;
+            border: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* GIPHY Embed Fix */
+        .giphy-embed-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .giphy-embed-container iframe {
+            border-radius: 12px;
+            width: 100%;
+            max-width: 320px;
+            height: 280px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hey Imani 💖</h1>
+
+    <div class="comfort-message">
+        <p>I know today isn't the best, but just know you're strong, beautiful, and loved. 💕</p>
+        <p>If I could, I'd be there with snacks, cuddles, and endless forehead kisses. 😘</p>
+        <p>For now, Here is a huggggggggggggg! 🤗</p>
+    </div>
+
+    <button class="hug-button" onclick="sendHug()">💖 Hug me Praxedes 💖</button>
+
+    <!-- Fixed GIPHY Embed (Centered & No Extra Text) -->
+    <div class="gif-container">
+        <div class="giphy-embed-container">
+            <iframe src="https://giphy.com/embed/EvYHHSntaIl5m" allowFullScreen></iframe>
+        </div>
+    </div>
+
+    <!-- Spotify Playlist -->
+    <div class="music-container">
+        <h2>🎶 Cozy Playlist for You 🎶</h2>
+        <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/4JsUK5gYtA9o5lNtKAMndV?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <script>
+        function sendHug() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const hug = document.createElement("div");
+                    hug.classList.add("floating-hug");
+                    hug.innerText = "🤗"; // Hug Emoji Instead of Hearts
+                    hug.style.left = Math.random() * 100 + "vw";
+                    hug.style.animationDuration = Math.random() * 3 + 2 + "s";
+                    document.body.appendChild(hug);
+                    setTimeout(() => hug.remove(), 5000);
+                }, i * 200);
+            }
+        }
+    </script>
+
+</body>
+</html>
